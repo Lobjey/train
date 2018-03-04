@@ -35,7 +35,13 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         })   
         .state('demo.example3', { 
             url: '/example3', 
-            templateUrl: 'views/demo/example3.html'
+            templateUrl: 'views/demo/example3.html',
+            controller: "example3",
+            resolve:{
+                example3: ["$ocLazyLoad", function ($ocLazyLoad) {
+                    return $ocLazyLoad.load('demoJs/example3.js');
+                }]
+            }
         })   
         .state('about', { 
             url: '/about', 
