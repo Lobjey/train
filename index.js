@@ -28,6 +28,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/demo/example2.html',
             controller: "example2",
             resolve:{
+                palyerData: function($http) {
+                    return $http.get('/jsonData/playersData.json')
+                        .then(function(response) {
+                            return response.data;
+                        });
+                },
                 example2: ["$ocLazyLoad", function ($ocLazyLoad) {
                     return $ocLazyLoad.load('demoJs/example2.js');
                 }]

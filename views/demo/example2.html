@@ -1,1 +1,10 @@
-{{test}}
+<table border="1">
+    <tr>ID</tr>
+    <tr>姓名</tr>
+    <tr>球队</tr>
+    <tr ng-repeat="v in palyersData">
+        <td>{{v.id}}</td>
+        <td>{{v.name}}</td>
+        <td>{{v.team}}</td>
+    </tr>
+</table>

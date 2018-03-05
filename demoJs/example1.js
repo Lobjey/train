@@ -10,9 +10,25 @@
         })
         .controller('example1', example1)
     
-    example1.$inject = ['$scope'];
+    example1.$inject = ['$scope', '$filter'];
 
-    function example1 ($scope) {
+    function example1 ($scope, $filter) {
+
         $scope.mobile = '13572951547';
+        $scope.testCurrency = 1234567.8;
+        $scope.initMobile = '13512345678';
+        var back = $scope.initMobile;
+
+        $scope.show = function () {
+            return $scope.initMobile.indexOf("*") > -1;
+        }
+
+        $scope.toggleNumber = function (start, length) {
+            if (!$scope.show()) {
+                $scope.initMobile = $filter("hidePhoneNumber")($scope.initMobile, start, length);
+            } else {
+                $scope.initMobile = back;
+            }
+        }
     }
 })(angular)
