@@ -30,14 +30,14 @@
                 field: 'RPG',
                 name: '场均篮板',
                 cellClass: function(grid, row, col, rowRenderIndex, colRenderIndex) {//当前uigrid,当前行信息,当前列信息，行index,列index
-                    if (grid.getCellValue(row,col) > 10) {
+                    if (row.entity.RPG > 10) {
                       return 'blue';
                     }
                 }
             }]
         };
 
-        firstService.readJson().then(function (response) {
+        firstService.readJson("playersData").then(function (response) {
             $scope.playerGrid.data = response.data;
         });
     }

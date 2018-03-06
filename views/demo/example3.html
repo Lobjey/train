@@ -1,1 +1,24 @@
-{{test}}
+<pre><h4>数组标注：最常用且推荐的方式</h4>
+    myApp.controller('smallCatCtrl', ['$scope', function($scope){  
+        $scope.sayCat = function(){  
+            alert('I Love Circle!');  
+        }  
+    }]);  
+</pre>
+<pre><h4>$inject属性标注：这种方式通过工厂方法的$inject属性声明依赖的组件，
+        主要用于js被压缩/混淆时，变量被重命名的情况</h4>
+    var MyController = function($scope, myService) {  
+        // ...  
+      }  
+    MyController.$inject = ['$scope', 'myService'];  
+    myApp.controller('MyController', MyController);  
+</pre>
+<pre><h4>隐式标注：这种方法最简易，Angular会通过工厂方法的参数名，
+        推断找到依赖的组件，但不能用于js被压缩/混淆的情况，
+        因为这种情况下方法的参数可能被重命名导致Angular无法定位依赖</h4>
+        myApp.controller('smallCatCtrl', function($scope){  
+            $scope.sayCat = function(){  
+                alert('I Love Circle!');  
+            }  
+        });  
+</pre>
