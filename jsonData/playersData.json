@@ -1,13 +1,13 @@
 [{
-    "RANK":1,"NAME":"詹姆斯 哈登","TEAM":"火箭","PPG":31.2,"APG":8.9,"RPG":5.2
+    "RANK":1,"NAME":"詹姆斯 哈登","TEAM":"火箭","TEAMAS":"HOU","PPG":31.2,"APG":8.9,"RPG":5.2
 },{
-    "RANK":2,"NAME":"安东尼 戴维斯","TEAM":"鹈鹕","PPG":28,"APG":2.4,"RPG":11.1
+    "RANK":2,"NAME":"安东尼 戴维斯","TEAM":"鹈鹕","TEAMAS":"NOP","PPG":28,"APG":2.4,"RPG":11.1
 },{
-    "RANK":3,"NAME":"扬尼斯 安特托昆博","TEAM":"雄鹿","PPG":27.3,"APG":4.9,"RPG":10.2
+    "RANK":3,"NAME":"扬尼斯 安特托昆博","TEAM":"雄鹿","TEAMAS":"MIL","PPG":27.3,"APG":4.9,"RPG":10.2
 },{
-    "RANK":4,"NAME":"斯蒂芬 库里","TEAM":"勇士","PPG":26.7,"APG":6.4,"RPG":5.2
+    "RANK":4,"NAME":"斯蒂芬 库里","TEAM":"勇士","TEAMAS":"GS","PPG":26.7,"APG":6.4,"RPG":5.2
 },{
-    "RANK":5,"NAME":"勒布朗 詹姆斯","TEAM":"骑士","PPG":26.7,"APG":9.1,"RPG":8.4
+    "RANK":5,"NAME":"勒布朗 詹姆斯","TEAM":"骑士","TEAMAS":"CLE","PPG":26.7,"APG":9.1,"RPG":8.4
 },{
-    "RANK":6,"NAME":"达米安 利拉德","TEAM":"开拓者","PPG":26.4,"APG":6.5,"RPG":4.5
+    "RANK":6,"NAME":"达米安 利拉德","TEAM":"开拓者","TEAMAS":"POR","PPG":26.4,"APG":6.5,"RPG":4.5
 }]
