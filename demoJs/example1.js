@@ -10,9 +10,9 @@
         })
         .controller('example1', example1)
     
-    example1.$inject = ['$scope', '$filter'];
+    example1.$inject = ['$scope', '$filter', 'userObj'];
 
-    function example1 ($scope, $filter) {
+    function example1 ($scope, $filter, userObj) {
 
         $scope.mobile = '13572951547';
         $scope.testCurrency = 1234567.8;
@@ -30,5 +30,7 @@
                 $scope.initMobile = back;
             }
         }
+
+        $scope.userValue = userObj.value;
     }
 })(angular)

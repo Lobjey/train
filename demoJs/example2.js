@@ -2,12 +2,13 @@
     angular.module('myApp', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'ui.grid.cellNav', ['../css/myCss.css']])
         .controller('example2', example2)
 
-    example2.$inject = ['$scope', 'firstService', '$stateParams', 'i18nService', 'uiGridConstants'];
+    example2.$inject = ['$scope', '$stateParams', 'i18nService', 'uiGridConstants', 'getPlayerData'];
 
-    function example2($scope, firstService, $stateParams, i18nService, uiGridConstants) {
+    function example2($scope, $stateParams, i18nService, uiGridConstants, getPlayerData) {
         i18nService.setCurrentLang('zh-cn');
 
         $scope.testParm = $stateParams.id;
+
         $scope.playerGrid = {
             enableFiltering: true,
             enableGridMenu : true,
@@ -96,8 +97,6 @@
             }]
         };
 
-        firstService.readJson("playersData").then(function (response) {
-            $scope.playerGrid.data = response.data;
-        });
+        $scope.playerGrid.data = getPlayerData.data;
     }
 })(angular)

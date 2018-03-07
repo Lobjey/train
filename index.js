@@ -7,7 +7,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: '/',
-            template: ''
+            template: '<h1>sdfds</h1>'
         })
         .state('demo', {
             url: '/demo',
@@ -18,6 +18,9 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/demo/example1.html',
             controller: "example1",
             resolve: {
+                userObj:  function(){
+                    return {value: 'WDL'};
+                 },
                 example1: ["$ocLazyLoad", function ($ocLazyLoad) {
                     return $ocLazyLoad.load('demoJs/example1.js');
                 }]
@@ -32,14 +35,26 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             // },
             resolve: {
                 firstService: 'myService',
+                getPlayerData: function(firstService) {
+                    return firstService.readJson("playersData");
+                },
                 example2: ["$ocLazyLoad", function ($ocLazyLoad) {
-                    return $ocLazyLoad.load('demoJs/example2.js');
+                    return $ocLazyLoad.load(['demoJs/example2.js']);
                 }]
             }
         })
         .state('demo.example3', {
             url: '/example3',
-            templateUrl: 'views/demo/example3.html'
+            templateUrl: 'views/demo/example3.html',
+            controller: "example1",
+            resolve: {
+                userObj:  function(){
+                    return {value: 'Lobjey'};
+                 },
+                example2: ["$ocLazyLoad", function ($ocLazyLoad) {
+                    return $ocLazyLoad.load(['demoJs/example1.js']);
+                }]
+            }
         })
         .state('refer', {
             url: '/refer',
