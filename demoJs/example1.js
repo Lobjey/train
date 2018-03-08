@@ -8,7 +8,7 @@
                     mobile.substr(start + length - 1, mobile.length);
             }
         })
-        .controller('example1', example1)
+        .controller('example1', example1);
     
     example1.$inject = ['$scope', '$filter', 'userObj'];
 

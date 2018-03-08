@@ -1,6 +1,6 @@
 (function(angular){
     angular.module('myApp', [])
-        .controller('refer', refer)
+        .controller('refer', refer);
     
     refer.$inject = ['$scope', 'myService'];
 
