@@ -43,13 +43,13 @@
                 name: '排序',
                 filter: {
                     //term: 1,
-                    placeholder: 'starts with...',
                     disableCancelFilterButton: true
                 }
             }, {
                 field: 'NAME',
                 name: '球员',
                 filter: {
+                    placeholder: 'starts with...',
                     condition: uiGridConstants.filter.STARTS_WITH,
                 },
                 // filter: {
