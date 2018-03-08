@@ -1,5 +1,5 @@
 (function (angular) {
-    angular.module('myApp', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'ui.grid.cellNav', ['../css/myCss.css']])
+    angular.module('myApp', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'ui.grid.cellNav', ['css/myCss.css']])
         .controller('example2', example2)
 
     example2.$inject = ['$scope', '$stateParams', 'i18nService', 'uiGridConstants', 'getPlayerData'];
@@ -8,6 +8,8 @@
         i18nService.setCurrentLang('zh-cn');
 
         $scope.testParm = $stateParams.id;
+
+        $scope.selectData = {};
 
         $scope.playerGrid = {
             enableFiltering: true,
@@ -33,7 +35,7 @@
                     });
 
                 gridApi.selection.on.rowSelectionChanged($scope, function (rows) {
-                    console.log(rows.entity);
+                    $scope.selectData = rows.entity;
                 });
             },
             columnDefs: [{

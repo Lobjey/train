@@ -11,16 +11,21 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('demo', {
             url: '/demo',
-            templateUrl: 'views/demo.html'
+            templateUrl: 'views/demo.html',
+            resolve: {
+                userObj:  function(){
+                    return {value: 'WDL'};
+                 }
+            }
         })
         .state('demo.example1', {
             url: '/example1',
             templateUrl: 'views/demo/example1.html',
             controller: "example1",
             resolve: {
-                userObj:  function(){
-                    return {value: 'WDL'};
-                 },
+                // userObj:  function(){
+                //     return {value: 'Wdl'};
+                //  },
                 example1: ["$ocLazyLoad", function ($ocLazyLoad) {
                     return $ocLazyLoad.load('demoJs/example1.js');
                 }]
