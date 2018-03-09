@@ -79,7 +79,7 @@
                 field: "TEAMAS",
                 name: "球队缩写",
                 filter: {
-                    flags: { caseSensitive: true },
+                    flags: { caseSensitive: false },
                 }
             }, {
                 field: 'APG',
@@ -95,7 +95,7 @@
                         return 'blue';
                     }
                 },
-                type: 'number'
+                //type: 'number'
             }]
         };
 
