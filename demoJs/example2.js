@@ -11,13 +11,23 @@
 
         $scope.selectData = {};
 
+        $scope.getRowClass = function (value) {
+            if (value == 1) {
+                return 'bgYellow';
+            } else if (value == 2) {
+                return 'bgBlue';
+            } else if (value == 3) {
+                return 'bgGreen';
+            }
+        };
+
         $scope.playerGrid = {
             enableFiltering: true,
             enableGridMenu : true,
             multiSelect: false,
             enableCellEdit: true,
             enableCellEditOnFocus: true,
-            rowTemplate: '<div ng-class="{\'bgYellow\':row.entity.RANK == 1,\'bgBlue\':row.entity.RANK == 2,\'bgGreen\':row.entity.RANK == 3}" ' +
+            rowTemplate: '<div ng-class="grid.appScope.getRowClass(row.entity.RANK)" ' +
                 'ng-click="grid.appScope.fnOne(row)" ' +
                 'ng-repeat="col in colContainer.renderedColumns track by col.colDef.name" class="ui-grid-cell" ui-grid-cell></div>',
             onRegisterApi: function (gridApi) {

@@ -12,8 +12,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('demo', {
             url: '/demo',
             templateUrl: 'views/demo.html',
+            controller: ['$scope', function ($scope) {
+                $scope.Id = 2;
+            }],
             resolve: {
-                userObj:  function(){
+                userObj:  function() {
                     return {value: 'WDL'};
                  }
             }
@@ -32,12 +35,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
         .state('demo.example2', {
-            url: '/example2/:id',
+            url: '/example2',
             templateUrl: 'views/demo/example2.html',
             controller: "example2",
-            // params: {
-            //     id: 0
-            // },
+            params: {
+                id: 0
+            },
             resolve: {
                 firstService: 'myService',
                 getPlayerData: function(firstService) {
